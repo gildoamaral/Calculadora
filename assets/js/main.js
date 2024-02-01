@@ -31,19 +31,19 @@ function Calculadora() {
     };
 
 
-    //Eventos1
+    //Eventos1 -> Foco
     this.addNumDisplay = el => {
         this.display.value += el.innerText;
         this.display.focus();
     };
 
-    //Eventos2
+    //Eventos2 -> Limpa a tela
     this.clearNumDisplay = () => this.display.value = "";
 
-    //Eventos3
+    //Eventos3 -> Apagar
     this.del = () => this.display.value = this.display.value.slice(0, -1);
 
-    //Eventos4
+    //Eventos4 -> resultado
     this.result = () => {
         try {
             const conta = eval(this.display.value);
@@ -52,7 +52,6 @@ function Calculadora() {
                 return
             }
             this.display.value = conta;
-
         } catch (e) {
             alert('Conta inválida');
             return;
